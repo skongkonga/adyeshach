@@ -32,10 +32,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-    - name: List All Files
-      run: ls -l
-    - name: Upload Artifacts
+    - name: Capture Build Artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: built-jars
-        path: build/libs/*.jar
+        name: Auto Build Artifacts
+        path: plugin/build/libs/
